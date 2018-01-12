@@ -1,0 +1,31 @@
+﻿<employee-count [all]="getTotalEmployeesCount()"
+                [directors]="getTotalDirectorsCount()"
+                [managers]="getTotalManagersCount()"
+                [programmers]="getTotalProgrammersCount()"
+                (countRadioButtonSelectionChanged)="onEmployeeCountRadioButtonChange($event)"></employee-count>
+
+<table>
+    <thead>
+        <tr>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Title</th>
+            <th>Salary</th>
+            <th>Hire Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngFor="let employee of employees;">
+            <tr  *ngIf="selectedEmployeeCountRadioButton=='All'|| selectedEmployeeCountRadioButton==employee.title">
+                <td>{{employee.code}}</td>
+                <td>{{employee.name}}</td>
+                <td>{{employee.title}}</td>
+                <td>{{employee.salary}}</td>
+                <td>{{employee.dateofhire}}</td>
+            </tr>
+        </ng-container>
+        <tr *ngIf="!employees || employees.length==0">
+            <td colspan="5">No Employee Records Were Returned</td> 
+        </tr>
+    </tbody>
+</table>

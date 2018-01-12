@@ -1,0 +1,12 @@
+﻿<span class="radioClass">Show :</span>
+<input type="radio" name="options" checked="checked" value="All" [(ngModel)] ="selectedRadioButtonValue" (change)="onRadioButtonSelectionChange()"/>
+<span class="radioClass">{{"All(" + all + ")"}}</span>
+
+<input type="radio" name="options" value="Director" [(ngModel)] ="selectedRadioButtonValue" (change)="onRadioButtonSelectionChange()"/>
+<span class="radioClass">{{"Directors(" + directors + ")"}}</span>
+
+<input type="radio" name="options" value="Manager" [(ngModel)]="selectedRadioButtonValue" (change)="onRadioButtonSelectionChange()"/>
+<span class="radioClass">{{"Managers(" + managers + ")"}}</span>
+
+<input type="radio" name="options" value="Programmer" [(ngModel)]="selectedRadioButtonValue" (change)="onRadioButtonSelectionChange()"/>
+<span class="radioClass">{{"Programmers(" + programmers + ")"}}</span>
